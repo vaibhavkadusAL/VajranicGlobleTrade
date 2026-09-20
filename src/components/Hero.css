@@ -1,0 +1,178 @@
+/* ============================================================
+   Hero Component Styles
+   ============================================================ */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 2rem 80px;
+  gap: 2rem;
+  flex: 1;
+  z-index: 2;
+  min-height: calc(100svh - 70px);
+}
+
+/* ── Eyebrow tag ── */
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  background: rgba(124, 58, 237, 0.08);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #a78bfa;
+  animation: fadeSlideUp 0.7s ease 0.1s both;
+}
+
+.hero__eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7c3aed;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── Heading ── */
+.hero__heading {
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: #fff;
+  margin: 0;
+  max-width: 780px;
+  background: linear-gradient(135deg, #ffffff 30%, #c4b5fd 70%, #67e8f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeSlideUp 0.7s ease 0.2s both;
+}
+
+/* ── Description ── */
+.hero__desc {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  color: rgba(196, 181, 253, 0.75);
+  max-width: 540px;
+  margin: 0;
+  animation: fadeSlideUp 0.7s ease 0.35s both;
+}
+
+/* ── Countdown wrapper ── */
+.hero__countdown {
+  animation: fadeSlideUp 0.7s ease 0.45s both;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Divider ── */
+.hero__divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+  border: none;
+  margin: 0.25rem 0;
+  animation: fadeSlideUp 0.7s ease 0.5s both;
+}
+
+/* ── Contact email ── */
+.hero__contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: rgba(196, 181, 253, 0.65);
+  animation: fadeSlideUp 0.7s ease 0.55s both;
+}
+
+.hero__contact-link {
+  color: #a78bfa;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.35);
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.hero__contact-link:hover {
+  color: #c4b5fd;
+  border-color: rgba(196, 181, 253, 0.7);
+}
+
+/* ── Brand symbol image (hero banner) ── */
+.hero__symbol {
+  width: min(420px, 88vw);
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+  animation: fadeSlideUp 0.7s ease 0.05s both;
+  filter: drop-shadow(0 8px 40px rgba(124, 58, 237, 0.25));
+  margin-bottom: -0.5rem;
+}
+
+/* ── Keyframes shared across hero children ── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 130px 1.5rem 60px;
+    gap: 1.6rem;
+    min-height: unset;
+  }
+
+  .hero__heading {
+    letter-spacing: -0.8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 110px 1.25rem 50px;
+    gap: 1.4rem;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero__eyebrow,
+  .hero__heading,
+  .hero__desc,
+  .hero__countdown,
+  .hero__divider,
+  .hero__contact,
+  .hero__symbol {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__eyebrow::before {
+    animation: none;
+  }
+}

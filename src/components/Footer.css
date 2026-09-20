@@ -1,0 +1,54 @@
+/* ============================================================
+   Footer Component Styles
+   ============================================================ */
+
+.footer {
+  position: relative;
+  z-index: 2;
+  padding: 1.8rem 2rem;
+  border-top: 1px solid rgba(139, 92, 246, 0.12);
+  background: rgba(8, 6, 20, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  animation: fadeSlideUp 0.8s ease 0.9s both;
+}
+
+.footer__copy {
+  font-size: 0.82rem;
+  color: rgba(196, 181, 253, 0.55);
+  letter-spacing: 0.2px;
+}
+
+.footer__love {
+  font-size: 0.78rem;
+  color: rgba(139, 92, 246, 0.5);
+  letter-spacing: 0.3px;
+}
+
+.footer__love span {
+  color: #e05e73;
+  display: inline-block;
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+/* ── Keyframe ── */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.3); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.2); }
+  70%       { transform: scale(1); }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .footer,
+  .footer__love span {
+    animation: none;
+  }
+}
