@@ -1,59 +1,102 @@
+import { useState, useEffect, useRef } from 'react'
+import gsap from 'gsap'
 import { siteConfig } from '../config/siteConfig'
-import Subscribe from './Subscribe'
-import SocialLinks from './SocialLinks'
-import symbolImg from '../assets/symbol.png'
+import logoImg from '../assets/Navbar image.PNG'
 import './Hero.css'
 
+const heroVideos = [
+  "/assets/bgvideo/11991712_3840_2160_30fps (1).mp4",
+  "/assets/bgvideo/12760196_1920_1080_30fps (1).mp4",
+  "/assets/bgvideo/13780879_3840_2160_24fps (1).mp4",
+  "/assets/bgvideo/8334351-uhd_4096_2160_25fps.mp4"
+];
+
 export default function Hero() {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const [nextVideoIndex, setNextVideoIndex] = useState(1)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  const currentVideoRef = useRef(null)
+  const nextVideoRef = useRef(null)
+  const contentRef = useRef(null)
+
+  useEffect(() => {
+    // GSAP Animation for hero text on mount
+    const ctx = gsap.context(() => {
+      gsap.from('.hero__animate', {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
+        delay: 0.2
+      });
+    }, contentRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const handleVideoEnded = () => {
+    setIsTransitioning(true);
+
+    // Start playing the next video
+    if (nextVideoRef.current) {
+      nextVideoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
+    }
+
+    // After fade duration, swap videos
+    setTimeout(() => {
+      setCurrentVideoIndex(nextVideoIndex);
+      setNextVideoIndex((nextVideoIndex + 1) % heroVideos.length);
+      setIsTransitioning(false);
+    }, 1000); // 1000ms crossfade duration
+  };
+
   return (
     <main className="hero" id="main-content">
-      {/* Brand symbol / hero banner image */}
-      <img
-        src={symbolImg}
-        alt="Vajranic Global Trade — brand symbol"
-        className="hero__symbol"
-      />
+      {/* Background Video Layer */}
+      <div className="hero__video-container">
+        {/* Current Video */}
+        <video
+          ref={currentVideoRef}
+          className={`hero__video ${isTransitioning ? 'fade-out' : 'fade-in'}`}
+          src={heroVideos[currentVideoIndex]}
+          autoPlay
+          muted
+          playsInline
+          onEnded={handleVideoEnded}
+        />
 
-      {/* Eyebrow badge */}
-      <p className="hero__eyebrow" aria-label="Coming Soon">
-        {siteConfig.tagline}
-      </p>
+        {/* Next Video (preloading/playing underneath during transition) */}
+        <video
+          ref={nextVideoRef}
+          className={`hero__video ${isTransitioning ? 'fade-in' : 'fade-out'}`}
+          src={heroVideos[nextVideoIndex]}
+          muted
+          playsInline
+          preload="auto"
+        />
 
-      {/* Main heading */}
-      <h1 className="hero__heading">
-        {siteConfig.heading}
-      </h1>
+        {/* Dark Green Overlay */}
+        <div className="hero__overlay"></div>
+      </div>
 
-      {/* Description */}
-      <p className="hero__desc">
-        {siteConfig.description}
-      </p>
+      {/* Hero Content */}
+      <div className="hero__content" ref={contentRef}>
+        <div className="hero__branding hero__animate">
+          <img src={logoImg} alt="Vajranic Global Trade Logo" className="hero__logo-img" />
+          <h1 className="hero__company-name">{siteConfig.companyName}</h1>
+        </div>
 
-      {/* Contact email */}
-      <p className="hero__contact">
-        <span>For enquiries:</span>
-        <a
-          href={`mailto:${siteConfig.contactEmail}`}
-          className="hero__contact-link"
-          aria-label={`Email us at ${siteConfig.contactEmail}`}
-        >
-          {siteConfig.contactEmail}
-        </a>
-      </p>
-
-      {/* Divider */}
-      <hr className="hero__divider" aria-hidden="true" />
-
-
-
-      {/* Divider */}
-      <hr className="hero__divider" aria-hidden="true" />
-
-      {/* Email subscription */}
-      <Subscribe />
-
-      {/* Social links */}
-      <SocialLinks />
+        <p className="hero__desc hero__animate">
+          Premium Indian Agricultural Products
+        </p>
+        <div className="hero__actions hero__animate">
+          <a href="#products" className="hero__btn">
+            Explore Products
+          </a>
+        </div>
+      </div>
     </main>
   )
 }

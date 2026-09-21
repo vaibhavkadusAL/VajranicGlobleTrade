@@ -5,13 +5,13 @@
 
 export const siteConfig = {
   // ── Branding ───────────────────────────────────────────────
-  companyName: "Vajranic Global Trade",
-  tagline: "Coming Soon",
+  companyName: "VAJRANIC GLOBAL TRADE LLP",
+  tagline: "Global Exporter | Agriculture Export | Connecting 50+ Countries ✈️",
 
   // ── Hero copy ──────────────────────────────────────────────
   heading: "Something Amazing Is Coming",
   description:
-    "We're working on something exciting. Our new website is launching soon. Stay tuned!",
+    "Global Exporter | Agriculture Export | Connecting 50+ Countries ✈️ | Sourcing & Delivering Excellence Worldwide.",
 
   // ── Countdown ─────────────────────────────────────────────
   // Duration in hours from first page load. Change this value
@@ -19,26 +19,45 @@ export const siteConfig = {
   // timer persists across page refreshes.
   countdownHours: 48,
 
-  // ── Contact / Sales email ─────────────────────────────────
+  // ── Contact Information ─────────────────────────────────
   contactEmail: "Sales@vajranicglobal.com",
+  whatsappNumber: "+91888353586", // Used exclusively for product inquiry links
+  phoneNumbers: [
+    "+91 88835 3586",
+    "+91 95459 29791",
+    "+91 98903 08098"
+  ],
 
   // ── Email subscription ────────────────────────────────────
   subscribeSuccessMessage: "Thanks! We'll notify you when we launch.",
 
   // ── Social links ──────────────────────────────────────────
-  // Replace "#" with real URLs when ready.
   socialLinks: {
     linkedin: "#",
-    instagram: "#",
-    facebook: "#",
+    instagram: "https://www.instagram.com/vajranicglobaltrade?stkn=MTA3NWJ5bzBsbTV1NQ%3D%3D&utm_source=qr",
+    facebook: "#", // Add official Facebook URL when available
     twitter: "#",
   },
 
   // ── Navigation ────────────────────────────────────────────
   navLinks: [
-    { label: "Home",    href: "#" },
-    { label: "About",   href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "Home", href: "/" },
+    { 
+      label: "Products", 
+      href: "/products",
+      dropdown: [
+        { label: "All Products", href: "/products" },
+        { label: "Fresh Fruits", href: "/products?category=fresh-fruits" },
+        { label: "Fresh Vegetables", href: "/products?category=fresh-vegetables" },
+        { label: "Dehydrated Products", href: "/products?category=dehydrated-products" },
+        { label: "Pulp & Processed", href: "/products?category=pulp-&-processed" },
+        { label: "Grains & Pulses", href: "/products?category=grains-&-pulses" },
+        { label: "Frozen Fruits", href: "/products?category=frozen-fruits" }
+      ]
+    },
+    { label: "Quality", href: "/#quality" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ],
 
   // ── SEO ───────────────────────────────────────────────────

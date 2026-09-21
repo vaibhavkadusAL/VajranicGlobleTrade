@@ -1,23 +1,28 @@
-import Background from './components/Background'
-import Header from './components/Header'
-import Hero from './components/Hero'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import About from './pages/About'
+import Products from './pages/Products'
+import ProductDetails from './pages/ProductDetails'
+import Contact from './pages/Contact'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+import './App.css'
 
 function App() {
   return (
-    <>
-      {/* Animated full-screen background */}
-      <Background />
-
-      {/* Fixed glassmorphism header */}
-      <Header />
-
-      {/* Main hero / coming-soon section */}
-      <Hero />
-
-      {/* Footer */}
+    <Router>
+      <ScrollToTop />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   )
 }
 

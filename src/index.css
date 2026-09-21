@@ -17,16 +17,21 @@
 /* ── Root tokens ── */
 :root {
   --font-sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
-  --color-bg:  #07060f;
-  --color-text: #c4b5fd;
-  --color-heading: #ffffff;
-  --color-accent: #7c3aed;
-  --color-accent-2: #06b6d4;
+  --primary-green: #1f5c3a;
+  --dark-green: #0b2e1c;
+  --light-green: #8fbf9f;
+  --white: #ffffff;
+  
+  --color-bg: var(--white);
+  --color-text: #333333;
+  --color-heading: var(--dark-green);
+  --color-accent: var(--primary-green);
+  --color-accent-2: var(--light-green);
 
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.5;
-  color-scheme: dark;
+  color-scheme: light;
   color: var(--color-text);
   background: var(--color-bg);
   font-synthesis: none;
