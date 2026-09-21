@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { siteConfig } from '../config/siteConfig'
-import logoImg from '../assets/fevicon-removebg-preview.png'
+import logoImg from '../assets/Navbar image.png'
 import './Header.css'
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -24,7 +23,7 @@ export default function Header() {
   }, [])
 
   const toggleMenu = () => setMenuOpen((prev) => !prev)
-  const closeMenu  = () => setMenuOpen(false)
+  const closeMenu = () => setMenuOpen(false)
 
   return (
     <>

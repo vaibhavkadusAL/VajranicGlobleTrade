@@ -1,5 +1,4 @@
 import { siteConfig } from '../config/siteConfig'
-import Countdown from './Countdown'
 import Subscribe from './Subscribe'
 import SocialLinks from './SocialLinks'
 import symbolImg from '../assets/symbol.png'
@@ -45,10 +44,7 @@ export default function Hero() {
       {/* Divider */}
       <hr className="hero__divider" aria-hidden="true" />
 
-      {/* Countdown timer */}
-      <div className="hero__countdown">
-        <Countdown />
-      </div>
+
 
       {/* Divider */}
       <hr className="hero__divider" aria-hidden="true" />

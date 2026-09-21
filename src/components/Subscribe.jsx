@@ -1,7 +1,7 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { siteConfig } from '../config/siteConfig'
 import './Subscribe.css'
-
 // ── Very simple email regex ─────────────────────────────────
 const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
 
@@ -25,17 +25,30 @@ export default function Subscribe() {
 
     setError('')
 
-    // ── TODO: replace this stub with a real API call ──────
-    // Example:
-    //   await fetch('/api/subscribe', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ email }),
-    //   })
-    // ─────────────────────────────────────────────────────
+    try {
+      // Replace these placeholders with your actual EmailJS credentials
+      // Sign up at https://www.emailjs.com/ to get these
+      // Make sure your EmailJS template uses {{to_email}} in the "To Email" field
+      const serviceId = 'YOUR_SERVICE_ID'
+      const templateId = 'YOUR_TEMPLATE_ID'
+      const publicKey = 'YOUR_PUBLIC_KEY'
 
-    setSuccess(true)
-    setEmail('')
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          to_email: email, // This sends the email to the address specified in the input
+          message: 'Thank you for your enquiry! We will notify you when we launch.',
+        },
+        publicKey
+      )
+
+      setSuccess(true)
+      setEmail('')
+    } catch (err) {
+      console.error('Failed to send email:', err)
+      setError('Failed to send email. Please try again later.')
+    }
   }
 
   return (
