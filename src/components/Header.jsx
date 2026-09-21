@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { siteConfig } from '../config/siteConfig'
-import logoImg from '../assets/Navbar image.png'
+import logoImg from '../assets/Navbar image.PNG'
 import './Header.css'
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
