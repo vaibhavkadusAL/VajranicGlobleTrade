@@ -95,7 +95,7 @@ export default function Products() {
         description="Explore Vajranic Global Trade's premium range of fresh fruits, vegetables, dehydrated products, mango pulp, grains, and frozen fruits from India."
         canonical="/products"
       />
-      <BackgroundVideo videoSrc="/assets/bgvideo/12760196_1920_1080_30fps (1).mp4">
+      <BackgroundVideo videoSrc="/assets/bgvideo/8334351-uhd_4096_2160_25fps.mp4">
         <div className="hero-inner-content">
           <h1 className="hero-inner-title fade-in-up">Our Products</h1>
           <p className="hero-inner-subtitle fade-in-up">

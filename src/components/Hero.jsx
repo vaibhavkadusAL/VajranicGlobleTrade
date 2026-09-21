@@ -6,7 +6,6 @@ import './Hero.css'
 
 const heroVideos = [
   "/assets/bgvideo/11991712_3840_2160_30fps (1).mp4",
-  "/assets/bgvideo/12760196_1920_1080_30fps (1).mp4",
   "/assets/bgvideo/13780879_3840_2160_24fps (1).mp4",
   "/assets/bgvideo/8334351-uhd_4096_2160_25fps.mp4"
 ];
