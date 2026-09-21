@@ -7,6 +7,7 @@ import ProductDetails from './pages/ProductDetails'
 import Contact from './pages/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import NotFound from './pages/NotFound'
 import './App.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>

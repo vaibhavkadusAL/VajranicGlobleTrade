@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import BackgroundVideo from '../components/BackgroundVideo'
+import SEO from '../components/SEO'
 import { products } from '../data/products'
 import { siteConfig } from '../config/siteConfig'
 import './ProductDetails.css'
@@ -26,8 +27,52 @@ export default function ProductDetails() {
     return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
   }
 
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": product.name,
+    "image": `https://www.vajranicglobaltrade.com${product.image}`,
+    "description": product.longDesc || product.shortDesc,
+    "brand": {
+      "@type": "Brand",
+      "name": "Vajranic Global Trade"
+    }
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.vajranicglobaltrade.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://www.vajranicglobaltrade.com/products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": product.name,
+        "item": `https://www.vajranicglobaltrade.com/product/${product.id}`
+      }
+    ]
+  }
+
   return (
     <div className="product-details-page">
+      <SEO 
+        title={`${product.name} Exporter from India | Vajranic Global Trade`}
+        description={product.shortDesc}
+        canonical={`/product/${product.id}`}
+        image={product.image}
+        schema={[productSchema, breadcrumbSchema]}
+      />
       <BackgroundVideo videoSrc="/assets/bgvideo/13780879_3840_2160_24fps (1).mp4">
         <div className="hero-inner-content">
           <p className="product-breadcrumb fade-in-up">
@@ -44,7 +89,7 @@ export default function ProductDetails() {
               
               {/* Product Image */}
               <div className="details-image-wrapper">
-                <img src={product.image} alt={product.name} className="details-image" />
+                <img src={product.image} alt={`Premium ${product.name} Exporter from India - Vajranic Global Trade`} className="details-image" />
                 <div className="details-category-badge">{product.category}</div>
               </div>
 

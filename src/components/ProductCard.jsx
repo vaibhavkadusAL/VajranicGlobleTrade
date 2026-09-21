@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="product-card">
       <div className="product-card__image-container">
-        <img src={product.image} alt={product.name} className="product-card__image" />
+        <img src={product.image} alt={`Premium ${product.name} Exporter from India - Vajranic Global Trade`} className="product-card__image" />
         <div className="product-card__overlay">
           <Link to={`/product/${product.id}`} className="product-card__btn">
             View Details

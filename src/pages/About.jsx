@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import BackgroundVideo from '../components/BackgroundVideo'
 import Canvas3D from '../components/Canvas3D'
+import SEO from '../components/SEO'
 import happyImg from '../assets/happy.jpg'
 import './About.css'
 
@@ -31,6 +32,11 @@ export default function About() {
 
   return (
     <div className="about-page">
+      <SEO 
+        title="About Vajranic Global Trade | Indian Agricultural Export Company"
+        description="Learn about Vajranic Global Trade, our agricultural sourcing from India, export services, and global business approach to premium quality produce."
+        canonical="/about"
+      />
       <BackgroundVideo videoSrc="/assets/bgvideo/11991712_3840_2160_30fps (1).mp4">
         <div className="hero-inner-content">
           <h1 className="hero-inner-title fade-in-up">About Vajranic Global</h1>

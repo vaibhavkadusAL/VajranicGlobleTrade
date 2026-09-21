@@ -53,7 +53,7 @@ export default function Hero() {
   };
 
   return (
-    <main className="hero" id="main-content">
+    <header className="hero" id="main-content">
       {/* Background Video Layer */}
       <div className="hero__video-container">
         {/* Current Video */}
@@ -85,11 +85,16 @@ export default function Hero() {
       <div className="hero__content" ref={contentRef}>
         <div className="hero__branding hero__animate">
           <img src={logoImg} alt="Vajranic Global Trade Logo" className="hero__logo-img" />
-          <h1 className="hero__company-name">{siteConfig.companyName}</h1>
+          <span className="hero__company-name" style={{ display: 'block', fontSize: '1.2rem', fontWeight: '500', marginBottom: '1rem', color: 'var(--light-green)' }}>
+            {siteConfig.companyName}
+          </span>
+          <h1 className="hero__desc" style={{ fontSize: '3rem', lineHeight: '1.2', margin: '0 0 1.5rem 0' }}>
+            Indian Agricultural Products Exporter & Global Supplier
+          </h1>
         </div>
 
-        <p className="hero__desc hero__animate">
-          Premium Indian Agricultural Products
+        <p className="hero__desc hero__animate" style={{ fontSize: '1.2rem', fontWeight: '400', maxWidth: '600px', margin: '0 auto 2rem auto' }}>
+          Premium Indian agricultural products, carefully sourced and supplied to global markets.
         </p>
         <div className="hero__actions hero__animate">
           <a href="#products" className="hero__btn">
@@ -97,6 +102,6 @@ export default function Hero() {
           </a>
         </div>
       </div>
-    </main>
+    </header>
   )
 }

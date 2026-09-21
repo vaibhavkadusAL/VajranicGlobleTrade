@@ -5,7 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Hero from '../components/Hero'
 import Canvas3D from '../components/Canvas3D'
 import ProductCard from '../components/ProductCard'
+import SEO from '../components/SEO'
 import { products } from '../data/products'
+import { siteConfig } from '../config/siteConfig'
 import './Home.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -34,8 +36,36 @@ export default function Home() {
   // Show only first 3 products as featured
   const featuredProducts = products.slice(0, 3)
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": siteConfig.companyName,
+    "url": "https://www.vajranicglobaltrade.com",
+    "description": "Premium Indian agricultural products exporter."
+  }
+
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": siteConfig.companyName,
+    "url": "https://www.vajranicglobaltrade.com",
+    "logo": "https://www.vajranicglobaltrade.com/favicon.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": siteConfig.phoneNumbers[0],
+      "contactType": "sales",
+      "email": siteConfig.contactEmail
+    }
+  }
+
   return (
     <div className="home-page">
+      <SEO 
+        title="Vajranic Global Trade | Agricultural Products & Fresh Produce Exporter India"
+        description="Premium Indian agricultural products, fresh fruits, vegetables, and grains exported globally by Vajranic Global Trade."
+        canonical="/"
+        schema={[websiteSchema, orgSchema]}
+      />
       <Hero />
       
       <main className="page-content" ref={journeyRef}>

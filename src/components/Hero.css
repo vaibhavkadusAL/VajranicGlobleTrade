@@ -50,7 +50,8 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 35, 15, 0.45); /* Cinematic green overlay */
+  background: rgba(0, 35, 15, 0.45);
+  /* Cinematic green overlay */
   z-index: 0;
 }
 
@@ -63,19 +64,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+
 }
 
 .hero__branding {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
 }
 
 .hero__logo-img {
   width: auto;
-  height: clamp(120px, 25vw, 280px);
+  height: clamp(120px, 20vw, 280px);
   object-fit: contain;
   display: block;
 }
@@ -156,6 +156,7 @@
   .hero__video {
     transition: none;
   }
+
   .hero__btn {
     transition: none;
   }

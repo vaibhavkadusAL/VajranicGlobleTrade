@@ -20,10 +20,10 @@ export const siteConfig = {
   countdownHours: 48,
 
   // ── Contact Information ─────────────────────────────────
-  contactEmail: "Sales@vajranicglobal.com",
-  whatsappNumber: "+91888353586", // Used exclusively for product inquiry links
+  contactEmail: "sales@vajranicglobal.com",
+  whatsappNumber: "+918888353586", // Used exclusively for product inquiry links
   phoneNumbers: [
-    "+91 88835 3586",
+    "+91 88883 53586",
     "+91 95459 29791",
     "+91 98903 08098"
   ],

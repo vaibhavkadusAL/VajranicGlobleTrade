@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import gsap from 'gsap'
 import BackgroundVideo from '../components/BackgroundVideo'
+import SEO from '../components/SEO'
 import { products } from '../data/products'
 import { siteConfig } from '../config/siteConfig'
 import './Products.css'
@@ -89,6 +90,11 @@ export default function Products() {
 
   return (
     <div className="products-page">
+      <SEO 
+        title="Indian Fruits, Vegetables & Agricultural Products Exporter | Vajranic"
+        description="Explore Vajranic Global Trade's premium range of fresh fruits, vegetables, dehydrated products, mango pulp, grains, and frozen fruits from India."
+        canonical="/products"
+      />
       <BackgroundVideo videoSrc="/assets/bgvideo/12760196_1920_1080_30fps (1).mp4">
         <div className="hero-inner-content">
           <h1 className="hero-inner-title fade-in-up">Our Products</h1>
@@ -120,7 +126,7 @@ export default function Products() {
               {filteredProducts.map(product => (
                 <div key={product.id} className="product-card">
                   <div className="product-card__img-wrap">
-                    <img src={product.image} alt={product.name} className="product-card__img" />
+                    <img src={product.image} alt={`Premium ${product.name} Exporter from India - Vajranic Global Trade`} className="product-card__img" />
                     <span className="product-card__category">{product.category}</span>
                   </div>
                   
