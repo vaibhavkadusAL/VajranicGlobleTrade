@@ -63,9 +63,9 @@ import lentilsImg from '../assets/Grains & Pulses/Lentils.jpg'
 import wheatImg from '../assets/Grains & Pulses/Wheat.jpg'
 
 // 6. Frozen Fruits
-import frozenPomegranateImg from '../assets/Frozen Fruits/Frozen Pomegranate.jpg'
-import frozenPlumImg from '../assets/Frozen Fruits/Frozen Plum.jpg'
-import frozenApricotsImg from '../assets/Frozen Fruits/Frozen Apricots.jpg'
+import frozenPomegranateImg from '../assets/Frozen Fruits/Frozen Pomegranate 1.jpeg'
+import frozenPlumImg from '../assets/Frozen Fruits/frozen plum.jpeg'
+import frozenApricotsImg from '../assets/Frozen Fruits/frozen Apricots.jpeg'
 
 
 export const products = [

@@ -40,7 +40,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": siteConfig.companyName,
-    "url": "https://www.vajranicglobaltrade.com",
+    "url": "https://vajranicglobal.com",
     "description": "Premium Indian agricultural products exporter."
   }
 
@@ -48,8 +48,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": siteConfig.companyName,
-    "url": "https://www.vajranicglobaltrade.com",
-    "logo": "https://www.vajranicglobaltrade.com/favicon.png",
+    "url": "https://vajranicglobal.com",
+    "logo": "https://vajranicglobal.com/favicon.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": siteConfig.phoneNumbers[0],

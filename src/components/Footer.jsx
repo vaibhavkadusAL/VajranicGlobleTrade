@@ -50,7 +50,7 @@ export default function Footer() {
             </li>
             <li>
               <strong>Address:</strong><br />
-              Mumbai, Maharashtra, India
+              A/P-Natepute, Tal-Malshiras, Dist-Solapur - 413109
             </li>
           </ul>
         </div>

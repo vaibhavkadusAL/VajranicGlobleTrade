@@ -68,6 +68,7 @@
 }
 
 .hero__branding {
+  margin: 150px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,6 +134,7 @@
   background: var(--white);
   border-radius: 50px;
   text-decoration: none;
+  margin: 0 0 20px 0;
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -148,6 +150,10 @@
 @media (max-width: 768px) {
   .hero__content {
     padding: 0 1.5rem;
+  }
+
+  .hero__logo-img {
+    display: none;
   }
 }
 

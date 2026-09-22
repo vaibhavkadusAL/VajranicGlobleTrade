@@ -31,7 +31,7 @@ export default function ProductDetails() {
     "@context": "https://schema.org/",
     "@type": "Product",
     "name": product.name,
-    "image": `https://www.vajranicglobaltrade.com${product.image}`,
+    "image": `https://vajranicglobal.com${product.image}`,
     "description": product.longDesc || product.shortDesc,
     "brand": {
       "@type": "Brand",
@@ -47,19 +47,19 @@ export default function ProductDetails() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.vajranicglobaltrade.com/"
+        "item": "https://vajranicglobal.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Products",
-        "item": "https://www.vajranicglobaltrade.com/products"
+        "item": "https://vajranicglobal.com/products"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": product.name,
-        "item": `https://www.vajranicglobaltrade.com/product/${product.id}`
+        "item": `https://vajranicglobal.com/product/${product.id}`
       }
     ]
   }

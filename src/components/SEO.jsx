@@ -12,9 +12,9 @@ export default function SEO({
   schema,
   canonical
 }) {
-  const currentUrl = url ? `https://www.vajranicglobaltrade.com${url}` : 'https://www.vajranicglobaltrade.com';
-  const canonicalUrl = canonical ? `https://www.vajranicglobaltrade.com${canonical}` : currentUrl;
-  const imageUrl = image.startsWith('http') ? image : `https://www.vajranicglobaltrade.com${image}`;
+  const currentUrl = url ? `https://vajranicglobal.com${url}` : 'https://vajranicglobal.com';
+  const canonicalUrl = canonical ? `https://vajranicglobal.com${canonical}` : currentUrl;
+  const imageUrl = image.startsWith('http') ? image : `https://vajranicglobal.com${image}`;
 
   return (
     <Helmet>

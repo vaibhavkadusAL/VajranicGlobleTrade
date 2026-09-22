@@ -93,7 +93,7 @@ export default function Contact() {
                   <div className="info-icon">📍</div>
                   <div>
                     <h3>Our Office</h3>
-                    <p>123 Global Trade Tower, Business Hub, Mumbai, Maharashtra, India 400001</p>
+                    <p>A/P-Natepute, Tal-Malshiras, Dist-Solapur - 413109</p>
                   </div>
                 </div>
                 
@@ -111,8 +111,7 @@ export default function Contact() {
                   <div className="info-icon">✉️</div>
                   <div>
                     <h3>Email</h3>
-                    <p>exports@vajranicglobal.com</p>
-                    <p>info@vajranicglobal.com</p>
+                    <p><a href="mailto:sales@vajranicglobal.com" style={{color: 'inherit', textDecoration: 'none'}}>sales@vajranicglobal.com</a></p>
                   </div>
                 </div>
                 

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DOMAIN = 'https://www.vajranicglobaltrade.com';
+const DOMAIN = 'https://vajranicglobal.com';
 
 // Format date as YYYY-MM-DD
 const today = new Date().toISOString().split('T')[0];

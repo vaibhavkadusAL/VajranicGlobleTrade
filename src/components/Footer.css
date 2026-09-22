@@ -4,6 +4,8 @@
   padding-top: 4rem;
   z-index: 10;
   position: relative;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .footer__container {
@@ -68,19 +70,22 @@
   margin-bottom: 0.2rem;
 }
 
+.footer__contact li {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  word-break: break-word; /* Ensure text like address wraps */
+  overflow-wrap: break-word;
+}
+
 .footer__contact a {
   color: var(--white);
   text-decoration: none;
   transition: color 0.3s ease;
+  word-break: break-all; /* Ensure email wraps properly */
 }
 
 .footer__contact a:hover {
   color: var(--light-green);
-}
-
-.footer__contact li {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.5;
 }
 
 .footer__bottom {
@@ -125,17 +130,45 @@
 @media (max-width: 900px) {
   .footer__container {
     grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
   }
 }
 
 @media (max-width: 600px) {
+  .footer {
+    padding-top: 3rem;
+  }
+  
   .footer__container {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .footer__brand {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .footer__logo img {
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .footer__bottom-inner {
     flex-direction: column;
     justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer__container {
+    gap: 1.5rem;
+  }
+  .footer__logo img {
+    max-width: 80%;
   }
 }
