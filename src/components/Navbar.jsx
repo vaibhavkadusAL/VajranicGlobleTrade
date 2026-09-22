@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'
-import logoImg from '../assets/Navbar image.PNG'
+import logoImg from '../assets/Navbar image.webp'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -55,6 +55,9 @@ export default function Navbar() {
             src={logoImg}
             alt={`${siteConfig.companyName} logo`}
             className="navbar__logo-img"
+            width="210"
+            height="168"
+            fetchpriority="high"
           />
         </Link>
 

@@ -128,7 +128,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="quality-image">
-              <img src={products[0].image} alt="Quality Checking" />
+              <img src={products[0].image} alt="Quality Checking" loading="lazy" width="600" height="400" />
             </div>
           </div>
         </section>

@@ -126,7 +126,7 @@ export default function Products() {
               {filteredProducts.map(product => (
                 <div key={product.id} className="product-card">
                   <div className="product-card__img-wrap">
-                    <img src={product.image} alt={`Premium ${product.name} Exporter from India - Vajranic Global Trade`} className="product-card__img" />
+                    <img src={product.image} alt={`Premium ${product.name} Exporter from India - Vajranic Global Trade`} className="product-card__img" loading="lazy" width="400" height="300" />
                     <span className="product-card__category">{product.category}</span>
                   </div>
                   

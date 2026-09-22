@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import BackgroundVideo from '../components/BackgroundVideo'
 import Canvas3D from '../components/Canvas3D'
 import SEO from '../components/SEO'
-import happyImg from '../assets/happy.jpg'
+import happyImg from '../assets/happy.webp'
 import './About.css'
 
 gsap.registerPlugin(ScrollTrigger)

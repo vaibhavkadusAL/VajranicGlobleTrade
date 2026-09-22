@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'
-import logoImg from '../assets/Navbar image.PNG'
+import logoImg from '../assets/Navbar image.webp'
 import './Footer.css'
 
 export default function Footer() {
@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Brand Section */}
         <div className="footer__brand">
           <Link to="/" className="footer__logo">
-            <img src={logoImg} alt={siteConfig.companyName} />
+            <img src={logoImg} alt={siteConfig.companyName} loading="lazy" width="200" height="160" />
           </Link>
           <p className="footer__desc">
             Global Exporter | Agriculture Export | Connecting 50+ Countries ✈️ | Sourcing & Delivering Excellence Worldwide.
