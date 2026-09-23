@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { siteConfig } from '../config/siteConfig'
-import logoImg from '../assets/Navbar image.webp'
+import logoImg from '../assets/Fevicon image.webp'
 import './Hero.css'
 
 const heroVideos = [
@@ -84,7 +84,7 @@ export default function Hero() {
       <div className="hero__content" ref={contentRef}>
         <div className="hero__branding hero__animate">
           <img src={logoImg} alt="Vajranic Global Trade Logo" className="hero__logo-img" width="300" height="240" fetchpriority="high" />
-          <span className="hero__company-name" style={{ display: 'block', fontSize: '1.2rem', fontWeight: '500', marginBottom: '1rem', color: 'var(--light-green)' }}>
+          <span className="hero__company-name" style={{ display: 'block', fontSize: '1.2rem', fontWeight: '500', marginBottom: '1rem', color: '#D4AF37' }}>
             {siteConfig.companyName}
           </span>
           <h1 className="hero__desc" style={{ fontSize: '3rem', lineHeight: '1.2', margin: '0 0 1.5rem 0' }}>

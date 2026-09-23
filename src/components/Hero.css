@@ -76,7 +76,7 @@
 
 .hero__logo-img {
   width: auto;
-  height: clamp(120px, 20vw, 280px);
+  height: clamp(40px, 6vw, 150px);
   object-fit: contain;
   display: block;
 }
